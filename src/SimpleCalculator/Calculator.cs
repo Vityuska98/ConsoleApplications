@@ -2,15 +2,19 @@ namespace SimpleCalculator;
 
 public class Calculator
 {
-    public static void Main()
+    public static void Main(string[]args)
     {
+        Addition add = new Addition();
+        Subtraction subtract = new Subtraction();
+        Division divide = new Division();
+        Multiplication multiply = new Multiplication();
         try
         {
             do
             {
                 int userOption;
                 System.Console.WriteLine("Welcome, dear!");
-                System.Console.WriteLine("Please enter a number that corresponds to one of the following Math operators");
+                System.Console.WriteLine("Please enter a number that represents the following Math operators");
                 System.Console.WriteLine("1. Addition");
                 System.Console.WriteLine("2. Subtraction");
                 System.Console.WriteLine("3. Multiplication");
@@ -21,16 +25,16 @@ public class Calculator
                 {
 
                     case 1:
-                        System.Console.WriteLine(Addition.Add());
+                        System.Console.WriteLine("The result of the addition is " +  add.Add());
                         break;
                     case 2:
-                        System.Console.WriteLine(Subtraction.Subtract());
+                        System.Console.WriteLine("The result of the subtraction is " + subtract.Subtract());
                         break;
                     case 3:
-                        System.Console.WriteLine(Multiplication.Multiply());
+                        System.Console.WriteLine("The result of the multiplication is " + multiply.Multiply());
                         break;
                     case 4:
-                        System.Console.WriteLine(Division.Divide());
+                        System.Console.WriteLine("The result of the division is " + divide.Divide());
                         break;
                     default:
                         System.Console.WriteLine("Unable to process...Please enter the appropriate option");

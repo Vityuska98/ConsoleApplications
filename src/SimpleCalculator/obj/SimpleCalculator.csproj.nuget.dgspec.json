@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\GitbubProject\\src\\SimpleCalculator\\SimpleCalculator.csproj": {}
+    "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\GitbubProject\\src\\SimpleCalculator\\SimpleCalculator.csproj": {
+    "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\GitbubProject\\src\\SimpleCalculator\\SimpleCalculator.csproj",
+        "projectUniqueName": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
         "projectName": "SimpleCalculator",
-        "projectPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\GitbubProject\\src\\SimpleCalculator\\SimpleCalculator.csproj",
+        "projectPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
         "packagesPath": "C:\\Users\\Victor Ibanichuka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\GitbubProject\\src\\SimpleCalculator\\obj\\",
+        "outputPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Victor Ibanichuka\\AppData\\Roaming\\NuGet\\NuGet.Config"

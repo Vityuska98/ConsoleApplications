@@ -1,17 +1,23 @@
 namespace SimpleCalculator;
 
 public class UserInputs
-
 {
-    public static int GetUserInput(string message)
+    private string userInput;
+    public string UserInput
     {
-        System.Console.WriteLine(message);
-        string? input = Console.ReadLine();
+        get { return userInput; }
+        set { userInput = value; }
+    }
+    
+    public int GetUserInput(string userInstruction)
+    {
+        System.Console.WriteLine(userInstruction);
+        UserInput = Console.ReadLine();
         int inputNumber;
-        while (!int.TryParse(input, out inputNumber))
+        while (!int.TryParse(UserInput, out inputNumber))
         {
             System.Console.WriteLine("Unable to process...please enter a number");
-            input = Console.ReadLine();
+            UserInput = Console.ReadLine();
         }
         return inputNumber;
     }
