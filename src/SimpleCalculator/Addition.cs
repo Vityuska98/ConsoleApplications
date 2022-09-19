@@ -2,13 +2,24 @@ namespace SimpleCalculator;
 
 public class Addition
 {
-    public static int Add()
-    {
-        int firstNumber = UserInputs.GetUserInput("Please enter the first number");
-        int secondNumber = UserInputs.GetUserInput("Please enter the second number");
+    private double _firstNumber;
+    private double _secondNumber;
+    public double FirstNumber { get; set; }
+    public double SecondNumber { get; set; }
 
-        int result = firstNumber + secondNumber;
-        return result;
+    public void AdditionWorkFlow()
+    {
+        var display = new UserConsoleUI();
+        display.RequestForUserInput("Please enter the first number");
+        var validate = new UserConsoleInputValidation();
+        FirstNumber = validate.ValidateInput();
+        display.RequestForUserInput("Please enter the second number");
+        SecondNumber = validate.ValidateInput();
+    }
+
+    public void Add()
+    {
+        Console.WriteLine($"{FirstNumber} + {SecondNumber} = " + (FirstNumber + SecondNumber));
     }
 
 }

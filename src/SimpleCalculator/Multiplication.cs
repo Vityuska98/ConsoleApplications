@@ -2,12 +2,24 @@ namespace SimpleCalculator;
 
 public class Multiplication
 {
-    public static int Multiply()
-    {
-        int firstNumber = UserInputs.GetUserInput("Please enter the first number");
-        int secondNumber = UserInputs.GetUserInput("Please enter the second number");
+    private double _firstNumber;
+    private double _secondNumber;
 
-        int result = firstNumber * secondNumber;
-        return result;
+    public double FirstNumber { get; set; }
+    public double SecondNumber { get; set; }
+
+    public void MultiplicationWorkflow()
+    {
+        var display = new UserConsoleUI();
+        display.RequestForUserInput("Please enter the first number");
+        var validate = new UserConsoleInputValidation();
+        FirstNumber = validate.ValidateInput();
+        display.RequestForUserInput("Please enter the second number");
+        SecondNumber = validate.ValidateInput();
+    }
+
+    public void Multiply()
+    {
+        Console.WriteLine($"{FirstNumber} multiplied by {SecondNumber} = " + (FirstNumber * SecondNumber));
     }
 }
