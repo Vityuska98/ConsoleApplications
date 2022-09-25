@@ -2,10 +2,8 @@ namespace SimpleCalculator;
 
 public class Addition
 {
-    private double _firstNumber;
-    private double _secondNumber;
-    public double FirstNumber { get; set; }
-    public double SecondNumber { get; set; }
+    public double FirstNumber { get; private set; }
+    public double SecondNumber { get; private set; }
 
     public void AdditionWorkFlow()
     {

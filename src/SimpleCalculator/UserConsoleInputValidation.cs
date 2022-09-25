@@ -11,4 +11,14 @@ public class UserConsoleInputValidation
         }
         return userInput;
     }
+
+    public double ValidateDenominator()
+    {
+        double denominator = 0;
+        while (!double.TryParse(Console.ReadLine(), out denominator) || denominator == 0)
+        {
+            Console.WriteLine("Oops you have either typed zero or a letter. Please enter a non-zero number");
+        }
+        return denominator;
+    }
 }

@@ -12,7 +12,6 @@ public class Calculator
                 var display = new UserConsoleUI();
                 display.WelcomeMessage();
                 userOption = Convert.ToInt32(Console.ReadLine());
-                var validate = new UserConsoleInputValidation();
 
                 switch (userOption)
                 {
