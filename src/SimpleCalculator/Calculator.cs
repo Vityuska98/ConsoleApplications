@@ -2,53 +2,55 @@ namespace SimpleCalculator;
 
 public class Calculator
 {
-    public static void Main(string[]args)
+    public static void Main(string[] args)
     {
-        Addition add = new Addition();
-        Subtraction subtract = new Subtraction();
-        Division divide = new Division();
-        Multiplication multiply = new Multiplication();
         try
         {
             do
             {
                 int userOption;
-                System.Console.WriteLine("Welcome, dear!");
-                System.Console.WriteLine("Please enter a number that represents the following Math operators");
-                System.Console.WriteLine("1. Addition");
-                System.Console.WriteLine("2. Subtraction");
-                System.Console.WriteLine("3. Multiplication");
-                System.Console.WriteLine("4. Division");
+                var display = new UserConsoleUI();
+                display.WelcomeMessage();
                 userOption = Convert.ToInt32(Console.ReadLine());
 
                 switch (userOption)
                 {
 
                     case 1:
-                        System.Console.WriteLine("The result of the addition is " +  add.Add());
+                        Addition doAdd = new Addition();
+                        doAdd.AdditionWorkFlow();
+                        doAdd.Add();
                         break;
+
                     case 2:
-                        System.Console.WriteLine("The result of the subtraction is " + subtract.Subtract());
+                        var doSub = new Subtraction();
+                        doSub.SubtractionWorkFlow();
+                        doSub.Subtract();
                         break;
+
                     case 3:
-                        System.Console.WriteLine("The result of the multiplication is " + multiply.Multiply());
+                        var doMultiplication = new Multiplication();
+                        doMultiplication.MultiplicationWorkflow();
+                        doMultiplication.Multiply();
                         break;
+
                     case 4:
-                        System.Console.WriteLine("The result of the division is " + divide.Divide());
+                        var doDivision = new Division();
+                        doDivision.DivisionWorkFlow();
+                        doDivision.Divide();
                         break;
+
                     default:
-                        System.Console.WriteLine("Unable to process...Please enter the appropriate option");
+                        Console.WriteLine("Unable to process! Please enter the appropriate option");
                         break;
                 }
-                System.Console.WriteLine("Do you wish to Continue? Please enter 1 to Continue or Any key to Exit");
+                Console.WriteLine("Do you wish to try again? Please enter 1 to try again or Any key to Exit");
             } while (Console.ReadLine() == "1");
-            System.Console.WriteLine("Good bye");
+            Console.WriteLine("Good bye");
         }
-        catch (System.Exception)
+        catch (Exception)
         {
-
-            System.Console.WriteLine("Unable to Process...Try again with a number");
+            Console.WriteLine("Unable to Process! Try again with a number");
         }
-
     }
 }
