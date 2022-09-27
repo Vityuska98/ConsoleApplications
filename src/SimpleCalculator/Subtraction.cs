@@ -2,12 +2,22 @@ namespace SimpleCalculator;
 
 public class Subtraction
 {
-    public static int Subtract()
-    {
-        int firstNumber = UserInputs.GetUserInput("Please enter the first number");
-        int secondNumber = UserInputs.GetUserInput("Please enter the second number");
+    public double FirstNumber { get; private set; }
+    public double SecondNumber { get; private set; }
 
-        int result = firstNumber - secondNumber;
-        return result;
+    public void SubtractionWorkFlow()
+    {
+        var display = new UserConsoleUI();
+        display.RequestForUserInput("Please enter the first number");
+        var validate = new UserConsoleInputValidation();
+        FirstNumber = validate.ValidateInput();
+        display.RequestForUserInput("Please enter the second number");
+        SecondNumber = validate.ValidateInput();
     }
+
+    public void Subtract()
+    {
+        Console.WriteLine($"{FirstNumber} - {SecondNumber} = " + (FirstNumber - SecondNumber));
+    }
+
 }

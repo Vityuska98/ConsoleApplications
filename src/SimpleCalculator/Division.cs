@@ -2,11 +2,21 @@ namespace SimpleCalculator;
 
 public class Division
 {
-    public static decimal Divide()
+    public double FirstNumber { get; private set; }
+    public double SecondNumber { get; private set; }
+
+    public void DivisionWorkFlow()
     {
-        decimal firstNumber = UserInputs.GetUserInput("Please enter the first number");
-        decimal secondNumber = UserInputs.GetUserInput("Plwease enter the second number");
-        decimal result = firstNumber / secondNumber;
-        return result;
+        var display = new UserConsoleUI();
+        display.RequestForUserInput("Please enter the first number");
+        var validate = new UserConsoleInputValidation();
+        FirstNumber = validate.ValidateInput();
+        display.RequestForUserInput("Please enter the second number");
+        SecondNumber = validate.ValidateDenominator();
+    }
+
+    public void Divide()
+    {
+        Console.WriteLine($"{FirstNumber} divided by {SecondNumber} = " + (FirstNumber / SecondNumber));
     }
 }
