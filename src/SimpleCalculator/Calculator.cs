@@ -17,7 +17,7 @@ public class Calculator
                 {
 
                     case 1:
-                        Addition doAdd = new Addition();
+                        var doAdd = new Addition();
                         doAdd.AdditionWorkFlow();
                         doAdd.Add();
                         break;

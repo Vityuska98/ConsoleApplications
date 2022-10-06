@@ -1,11 +1,11 @@
 {
   "version": 3,
-  "targets": {
-    "net6.0": {}
-  },
+  "targets": {},
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Microsoft.Extensions.DependencyInjection >= 7.0.0-rc.1.22426.10"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Victor Ibanichuka\\.nuget\\packages\\": {}
@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
+      "projectUniqueName": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
       "projectName": "SimpleCalculator",
-      "projectPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
+      "projectPath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
       "packagesPath": "C:\\Users\\Victor Ibanichuka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\obj\\",
+      "outputPath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Victor Ibanichuka\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -31,7 +31,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj": {
+              "projectPath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -43,6 +47,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[7.0.0-rc.1.22426.10, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -61,5 +71,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.Extensions.DependencyInjection"
+    }
+  ]
 }

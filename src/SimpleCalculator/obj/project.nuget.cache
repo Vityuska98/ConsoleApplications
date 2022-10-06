@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "JiCz8gbKMWEJIS1AIGbRMJ/KRz4ubyY0/H3nyHQl4mExZW9vSX2iaFKCfT+k+BErI/DuaSTKC/eyElUFHujP3w==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
+  "dgSpecHash": "A0axHFytpSrb9Q0MQrPcQz0YKqcCGnt6fixE1/MCr0Al5pvZeydbGuyD6Nla4/u1Tq1adscUoJEg/oNcfB3Yeg==",
+  "success": false,
+  "projectFilePath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.Extensions.DependencyInjection"
+    }
+  ]
 }
