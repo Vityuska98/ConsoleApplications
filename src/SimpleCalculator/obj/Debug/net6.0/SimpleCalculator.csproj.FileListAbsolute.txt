@@ -28,3 +28,8 @@ C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\
 C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\src\SimpleCalculator\obj\Debug\net6.0\SimpleCalculator.pdb
 C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\src\SimpleCalculator\obj\Debug\net6.0\SimpleCalculator.genruntimeconfig.cache
 C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\src\SimpleCalculator\obj\Debug\net6.0\ref\SimpleCalculator.dll
+C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\src\SimpleCalculator\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\src\SimpleCalculator\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\src\SimpleCalculator\bin\Debug\net6.0\Calculations.dll
+C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\src\SimpleCalculator\bin\Debug\net6.0\Calculations.pdb
+C:\Users\Victor Ibanichuka\OneDrive\Desktop\Github projects\ConsoleApplications\src\SimpleCalculator\obj\Debug\net6.0\SimpleCalculator.csproj.CopyComplete

@@ -13,7 +13,7 @@ public class Subtraction : ISubtraction
 
     public void Subtract()
     {
-        Console.WriteLine(FirstNumber - SecondNumber);
+        Console.WriteLine($"{FirstNumber} - {SecondNumber} = " + (FirstNumber - SecondNumber));
     }
 
     public void SubtractWorkFlow()
@@ -22,5 +22,6 @@ public class Subtraction : ISubtraction
         FirstNumber = _validateInput.ValidateInput();
         Console.WriteLine("Please enter the second number");
         SecondNumber = _validateInput.ValidateInput();
+        Subtract();
     }
 }

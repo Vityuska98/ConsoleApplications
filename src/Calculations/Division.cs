@@ -14,7 +14,7 @@ public class Division : IDivision
 
     public void Divide()
     {
-        Console.WriteLine(FirstNumber / SecondNumber);
+        Console.WriteLine($"{FirstNumber} divided by {SecondNumber} = " + (FirstNumber / SecondNumber));
     }
 
     public void DivideWorkFlow()
@@ -23,5 +23,6 @@ public class Division : IDivision
         FirstNumber = _validateInput.ValidateInput();
         Console.WriteLine("Please enter the second number");
         SecondNumber = _validateInput.ValidateDenominator();
+        Divide();
     }
 }

@@ -22,6 +22,6 @@ public class Addition : IAddition
     }
     public void Add()
     {
-        Console.WriteLine(FirstNumber + SecondNumber);
+        Console.WriteLine($"{FirstNumber} + {SecondNumber} = " + (FirstNumber + SecondNumber));
     }
 }

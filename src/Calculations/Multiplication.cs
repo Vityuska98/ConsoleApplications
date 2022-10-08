@@ -6,14 +6,14 @@ public class Multiplication : IMultiplication
 
     public Multiplication(IUserConsoleInputValidation validateInput)
     {
-        _validateInput= validateInput;
+        _validateInput = validateInput;
     }
     public double FirstNumber { get; set; }
     public double SecondNumber { get; set; }
 
     public void Multiply()
     {
-        Console.WriteLine(FirstNumber * SecondNumber);
+        Console.WriteLine($"{FirstNumber} multiplied by {SecondNumber} = " + (FirstNumber * SecondNumber));
     }
 
     public void MultiplyWorkFlow()
@@ -22,5 +22,6 @@ public class Multiplication : IMultiplication
         FirstNumber = _validateInput.ValidateInput();
         Console.WriteLine("Please enter the second number");
         SecondNumber = _validateInput.ValidateInput();
+        Multiply();
     }
 }
