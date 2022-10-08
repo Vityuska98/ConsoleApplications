@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj": {}
+    "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj": {
+    "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj",
+        "projectUniqueName": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj",
         "projectName": "Calculations",
-        "projectPath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj",
+        "projectPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj",
         "packagesPath": "C:\\Users\\Victor Ibanichuka\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\obj\\",
+        "outputPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Victor Ibanichuka\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -56,14 +56,14 @@
         }
       }
     },
-    "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj": {
+    "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
+        "projectUniqueName": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
         "projectName": "SimpleCalculator",
-        "projectPath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
+        "projectPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\SimpleCalculator.csproj",
         "packagesPath": "C:\\Users\\Victor Ibanichuka\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\obj\\",
+        "outputPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\SimpleCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Victor Ibanichuka\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -78,8 +78,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj": {
-                "projectPath": "c:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj"
+              "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj": {
+                "projectPath": "C:\\Users\\Victor Ibanichuka\\OneDrive\\Desktop\\Github projects\\ConsoleApplications\\src\\Calculations\\Calculations.csproj"
               }
             }
           }

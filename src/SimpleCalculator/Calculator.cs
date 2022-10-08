@@ -1,9 +1,18 @@
+using Microsoft.Extensions.DependencyInjection;
+using Calculations;
 namespace SimpleCalculator;
 
 public class Calculator
 {
     public static void Main(string[] args)
     {
+
+        var serviceProvider = new ServiceCollection()
+            .AddScoped<IAddition, Addition>()
+            .AddScoped<IDivision, Division>()
+            .AddScoped<IMultiplication, Multiplication>()
+            .AddScoped<ISubtraction, Subtraction>()
+            .BuildServiceProvider();
         try
         {
             do
@@ -17,27 +26,8 @@ public class Calculator
                 {
 
                     case 1:
-                        var doAdd = new Addition();
-                        doAdd.AdditionWorkFlow();
-                        doAdd.Add();
-                        break;
-
-                    case 2:
-                        var doSub = new Subtraction();
-                        doSub.SubtractionWorkFlow();
-                        doSub.Subtract();
-                        break;
-
-                    case 3:
-                        var doMultiplication = new Multiplication();
-                        doMultiplication.MultiplicationWorkflow();
-                        doMultiplication.Multiply();
-                        break;
-
-                    case 4:
-                        var doDivision = new Division();
-                        doDivision.DivisionWorkFlow();
-                        doDivision.Divide();
+                        var addService = serviceProvider.GetService<IAddition>();
+                        addService?.AddWorkFlow();
                         break;
 
                     default:

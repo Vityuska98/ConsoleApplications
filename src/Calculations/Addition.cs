@@ -18,6 +18,7 @@ public class Addition : IAddition
         FirstNumber = _validateInput.ValidateInput();
         Console.WriteLine("Please enter the second number");
         SecondNumber = _validateInput.ValidateInput();
+        Add();
     }
     public void Add()
     {
