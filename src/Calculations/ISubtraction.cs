@@ -2,8 +2,8 @@ namespace Calculations;
 
 public interface ISubtraction
 {
-    public double FirstNumber { get; set; }
-    public double SecondNumber { get; set; }
+    public double FirstNumber { get; }
+    public double SecondNumber { get; }
     void Subtract();
     void SubtractWorkFlow();
 }
