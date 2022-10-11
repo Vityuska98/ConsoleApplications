@@ -1,45 +1,53 @@
+using Microsoft.Extensions.DependencyInjection;
+using Calculations;
 namespace SimpleCalculator;
 
 public class Calculator
 {
     public static void Main(string[] args)
     {
+        var serviceProvider = new ServiceCollection()
+            .AddScoped<IAddition, Addition>()
+            .AddScoped<IDivision, Division>()
+            .AddScoped<IMultiplication, Multiplication>()
+            .AddScoped<ISubtraction, Subtraction>()
+            .AddScoped<IUserConsoleInputValidation, UserConsoleInputValidation>()
+            .BuildServiceProvider();
         try
         {
             do
             {
                 int userOption;
-                var display = new UserConsoleUI();
-                display.WelcomeMessage();
+                Console.WriteLine("Welcome, User!");
+                Console.WriteLine("Please enter a number that represents the following Math operators");
+                Console.WriteLine("1. Addition");
+                Console.WriteLine("2. Subtraction");
+                Console.WriteLine("3. Multiplication");
+                Console.WriteLine("4. Division");
                 userOption = Convert.ToInt32(Console.ReadLine());
 
                 switch (userOption)
                 {
 
                     case 1:
-                        Addition doAdd = new Addition();
-                        doAdd.AdditionWorkFlow();
-                        doAdd.Add();
+                        var addService = serviceProvider.GetService<IAddition>();
+                        addService?.AddWorkFlow();
                         break;
 
                     case 2:
-                        var doSub = new Subtraction();
-                        doSub.SubtractionWorkFlow();
-                        doSub.Subtract();
+                        var subService = serviceProvider.GetService<ISubtraction>();
+                        subService?.SubtractWorkFlow();
                         break;
 
                     case 3:
-                        var doMultiplication = new Multiplication();
-                        doMultiplication.MultiplicationWorkflow();
-                        doMultiplication.Multiply();
+                        var multiplyService = serviceProvider.GetService<IMultiplication>();
+                        multiplyService?.MultiplyWorkFlow();
                         break;
 
                     case 4:
-                        var doDivision = new Division();
-                        doDivision.DivisionWorkFlow();
-                        doDivision.Divide();
+                        var divideService = serviceProvider.GetService<IDivision>();
+                        divideService?.DivideWorkFlow();
                         break;
-
                     default:
                         Console.WriteLine("Unable to process! Please enter the appropriate option");
                         break;
