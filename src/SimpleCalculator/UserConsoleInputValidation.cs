@@ -1,6 +1,6 @@
-namespace Calculations;
+namespace SimpleCalculator;
 
-public class UserConsoleInputValidation : IUserConsoleInputValidation
+public class UserConsoleInputValidation
 {
     public double ValidateInput()
     {
