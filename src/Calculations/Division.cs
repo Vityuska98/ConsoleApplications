@@ -3,7 +3,6 @@ namespace Calculations;
 public class Division : IDivision
 {
     private readonly IUserConsoleInputValidation _validateInput;
-
     public Division(IUserConsoleInputValidation validateInput)
     {
         _validateInput = validateInput;
@@ -12,17 +11,21 @@ public class Division : IDivision
     public double FirstNumber { get; private set; }
     public double SecondNumber { get; private set; }
 
-    public void Divide()
+    public double Num1()
     {
-        Console.WriteLine($"{FirstNumber} divided by {SecondNumber} = " + (FirstNumber / SecondNumber));
+        return FirstNumber = _validateInput.ValidateInput();
     }
 
-    public void DivideWorkFlow()
+    public double Num2()
     {
-        Console.WriteLine("Please enter the first number");
-        FirstNumber = _validateInput.ValidateInput();
-        Console.WriteLine("Please enter the second number");
-        SecondNumber = _validateInput.ValidateDenominator();
-        Divide();
+        return SecondNumber = _validateInput.ValidateInput();
+    }
+    public double DoDivision()
+    {
+        return Divide(FirstNumber, SecondNumber);
+    }
+    public double Divide(double firstNumber, double secondNumber)
+    {
+        return firstNumber / secondNumber;
     }
 }

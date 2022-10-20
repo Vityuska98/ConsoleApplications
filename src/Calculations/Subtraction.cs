@@ -11,17 +11,21 @@ public class Subtraction : ISubtraction
     public double FirstNumber { get; private set; }
     public double SecondNumber { get; private set; }
 
-    public void Subtract()
+    public double Num1()
     {
-        Console.WriteLine($"{FirstNumber} - {SecondNumber} = " + (FirstNumber - SecondNumber));
+        return FirstNumber = _validateInput.ValidateInput();
     }
 
-    public void SubtractWorkFlow()
+    public double Num2()
     {
-        Console.WriteLine("Please enter the first number");
-        FirstNumber = _validateInput.ValidateInput();
-        Console.WriteLine("Please enter the second number");
-        SecondNumber = _validateInput.ValidateInput();
-        Subtract();
+        return SecondNumber = _validateInput.ValidateInput();
+    }
+    public double DoSubtraction()
+    {
+        return Subtract(FirstNumber, SecondNumber);
+    }
+    public double Subtract(double firstNumber, double secondNumber)
+    {
+        return firstNumber - secondNumber;
     }
 }
