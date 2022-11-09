@@ -19,43 +19,45 @@ public class Calculator
                 Console.WriteLine("3. Multiplication");
                 Console.WriteLine("4. Division");
                 userOption = Convert.ToInt32(Console.ReadLine());
-
+                IUserInputValidation input = serviceProvider.GetService<IUserInputValidation>();
+                double num1;
+                double num2;
                 switch (userOption)
                 {
                     case 1:
                         var addService = serviceProvider.GetService<IAddition>();
                         Console.WriteLine("Please enter the first number");
-                        addService?.Num1();
+                        num1 = input.ValidateInput();
                         Console.WriteLine("Please enter the second number");
-                        addService?.Num2();
-                        Console.WriteLine(addService?.DoAdd());
+                        num2 = input.ValidateInput();
+                        Console.WriteLine(addService?.Add(num1, num2));
                         break;
 
                     case 2:
                         var subService = serviceProvider.GetService<ISubtraction>();
                         Console.WriteLine("Please enter the first number");
-                        subService?.Num1();
+                        num1 = input.ValidateInput();
                         Console.WriteLine("Please enter the second number");
-                        subService?.Num2();
-                        Console.WriteLine(subService?.DoSubtraction());
+                        num2 = input.ValidateInput();
+                        Console.WriteLine(subService?.Subtract(num1, num2));
                         break;
 
                     case 3:
                         var multiplyService = serviceProvider.GetService<IMultiplication>();
                         Console.WriteLine("Please enter the first number");
-                        multiplyService?.Num1();
+                        num1 = input.ValidateInput();
                         Console.WriteLine("Please enter the second number");
-                        multiplyService?.Num2();
-                        Console.WriteLine(multiplyService?.DoMultiplication());
+                        num2 = input.ValidateInput();
+                        Console.WriteLine(multiplyService?.Multiply(num1, num2));
                         break;
 
                     case 4:
                         var divideService = serviceProvider.GetService<IDivision>();
                         Console.WriteLine("Please enter the first number");
-                        divideService?.Num1();
+                        var numerator = input.ValidateInput();
                         Console.WriteLine("Please enter the second number");
-                        divideService?.Num2();
-                        Console.WriteLine(divideService?.DoDivision());
+                        var denominator = input.ValidateDenominator();
+                        Console.WriteLine(divideService?.Divide(numerator, denominator));
                         break;
                     default:
                         Console.WriteLine("Unable to process! Please enter the appropriate option");

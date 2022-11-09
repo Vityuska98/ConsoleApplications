@@ -1,6 +1,6 @@
 namespace Calculations;
 
-public interface IUserConsoleInputValidation
+public interface IUserInputValidation
 {
     double ValidateInput();
     double ValidateDenominator();
