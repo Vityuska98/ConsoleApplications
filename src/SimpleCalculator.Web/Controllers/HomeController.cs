@@ -11,7 +11,7 @@ public class HomeController : Controller
     private readonly ISubtraction _subtraction;
     private readonly IMultiplication _multiplication;
 
-    public HomeController(IAddition addition, ISubtraction subtraction, IMultiplication multiplication) 
+    public HomeController(IAddition addition, ISubtraction subtraction, IMultiplication multiplication)
     {
         _addition = addition;
         _subtraction = subtraction;
@@ -27,15 +27,15 @@ public class HomeController : Controller
     public IActionResult Add(CalculationInputModel model)
     {
         model.Result = _addition.Add(model.FirstNumber, model.SecondNumber);
-        ViewData["Result"]= model.Result;
+        ViewData["Result"] = model.Result;
         return View("Index");
     }
-    
+
     [HttpPost]
     public IActionResult Subtract(CalculationInputModel model)
     {
         model.Result = _subtraction.Subtract(model.FirstNumber, model.SecondNumber);
-        ViewData["Result"]= model.Result;
+        ViewData["Result"] = model.Result;
         return View("Index");
     }
 
@@ -43,7 +43,7 @@ public class HomeController : Controller
     public IActionResult Multiply(CalculationInputModel model)
     {
         model.Result = _multiplication.Multiply(model.FirstNumber, model.SecondNumber);
-        ViewData["Result"]= model.Result;
+        ViewData["Result"] = model.Result;
         return View("Index");
     }
 
