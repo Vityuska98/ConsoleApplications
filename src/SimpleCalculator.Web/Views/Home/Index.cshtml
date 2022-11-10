@@ -9,15 +9,15 @@
 
     <label asp-for="FirstNumber"></label>
     <input type="number" asp-for="FirstNumber" /> <br />
-    <span asp-validation-for="FirstNumber"></span><br />
+    <span asp-validation-for="FirstNumber" class="text-danger"></span><br />
 
     <label asp-for="SecondNumber"></label>
     <input type="number" asp-for="SecondNumber" /> <br />
-    <span asp-validation-for="SecondNumber"></span><br />
+    <span asp-validation-for="SecondNumber" class="text-danger"></span><br />
 
     <p>
         <label asp-for="Result"></label>
-        <input asp-for="@ViewData["Result"]" /> <br />
+        <input asp-for="@ViewData["Result"]" readonly="true" /> <br />
     </p>
 
     <button type="submit" class="btn btn-primary" asp-controller="Home" asp-action="Add">+</button>
@@ -26,3 +26,7 @@
     <button type="submit" class="btn btn-primary">/</button>
     <button type="submit" class="btn btn-danger" asp-controller="Home" asp-action="Index">C</button>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
