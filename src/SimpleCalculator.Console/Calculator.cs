@@ -6,13 +6,7 @@ public class Calculator
 {
     public static void Main(string[] args)
     {
-        var serviceProvider = new ServiceCollection()
-            .AddScoped<IAddition, Addition>()
-            .AddScoped<IDivision, Division>()
-            .AddScoped<IMultiplication, Multiplication>()
-            .AddScoped<ISubtraction, Subtraction>()
-            .AddScoped<IUserConsoleInputValidation, UserConsoleInputValidation>()
-            .BuildServiceProvider();
+        var serviceProvider = Startup.Configure();
         try
         {
             do
@@ -25,28 +19,45 @@ public class Calculator
                 Console.WriteLine("3. Multiplication");
                 Console.WriteLine("4. Division");
                 userOption = Convert.ToInt32(Console.ReadLine());
-
+                IUserInputValidation input = serviceProvider.GetService<IUserInputValidation>();
+                double num1;
+                double num2;
                 switch (userOption)
                 {
-
                     case 1:
                         var addService = serviceProvider.GetService<IAddition>();
-                        addService?.AddWorkFlow();
+                        Console.WriteLine("Please enter the first number");
+                        num1 = input.ValidateInput();
+                        Console.WriteLine("Please enter the second number");
+                        num2 = input.ValidateInput();
+                        Console.WriteLine(addService?.Add(num1, num2));
                         break;
 
                     case 2:
                         var subService = serviceProvider.GetService<ISubtraction>();
-                        subService?.SubtractWorkFlow();
+                        Console.WriteLine("Please enter the first number");
+                        num1 = input.ValidateInput();
+                        Console.WriteLine("Please enter the second number");
+                        num2 = input.ValidateInput();
+                        Console.WriteLine(subService?.Subtract(num1, num2));
                         break;
 
                     case 3:
                         var multiplyService = serviceProvider.GetService<IMultiplication>();
-                        multiplyService?.MultiplyWorkFlow();
+                        Console.WriteLine("Please enter the first number");
+                        num1 = input.ValidateInput();
+                        Console.WriteLine("Please enter the second number");
+                        num2 = input.ValidateInput();
+                        Console.WriteLine(multiplyService?.Multiply(num1, num2));
                         break;
 
                     case 4:
                         var divideService = serviceProvider.GetService<IDivision>();
-                        divideService?.DivideWorkFlow();
+                        Console.WriteLine("Please enter the first number");
+                        var numerator = input.ValidateInput();
+                        Console.WriteLine("Please enter the second number");
+                        var denominator = input.ValidateDenominator();
+                        Console.WriteLine(divideService?.Divide(numerator, denominator));
                         break;
                     default:
                         Console.WriteLine("Unable to process! Please enter the appropriate option");

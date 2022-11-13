@@ -4,7 +4,5 @@ public interface IDivision
 {
     public double FirstNumber { get; }
     public double SecondNumber { get; }
-
-    void DivideWorkFlow();
-    void Divide();
+    double Divide(double num1, double num2);
 }

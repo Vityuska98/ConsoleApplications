@@ -1,10 +1,7 @@
 namespace Calculations;
-
 public interface IAddition
 {
     public double FirstNumber { get; }
     public double SecondNumber { get; }
-
-    void AddWorkFlow();
-    void Add();
+    double Add(double num1, double num2);
 }
