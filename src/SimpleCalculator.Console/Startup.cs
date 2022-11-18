@@ -11,6 +11,7 @@ public class Startup
             .AddScoped<IDivision, Division>()
             .AddScoped<IMultiplication, Multiplication>()
             .AddScoped<ISubtraction, Subtraction>()
+            .AddScoped<IUserInputs, UserInputs>()
             .AddScoped<IUserInputValidation, UserConsoleInputValidation>();
 
         return serviceCollection.BuildServiceProvider();
