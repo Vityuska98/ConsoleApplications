@@ -11,8 +11,19 @@ public class AdditionTest
     [InlineData(double.MaxValue, 3, double.MaxValue)]
     public void Add_TwoNumbersShouldAdd(double firstNumber, double secondNumber, double expected)
     {
-        var addTest = new Addition();
-        double actual = addTest.Add(firstNumber, secondNumber);
+        var inputs = new Addition();
+        var actual = inputs.Add(firstNumber, secondNumber);
         Assert.Equal(expected, actual);
+    }
+
+    [Theory]
+    [InlineData(double.MaxValue, double.MaxValue, double.PositiveInfinity)]
+    [InlineData(double.MinValue, double.MinValue, double.NegativeInfinity)]
+    public void Add_ShouldBeInfinity(double firstNumber, double secondNumber, double expected)
+    {
+        var inputs = new Addition();
+        var actual = inputs.Add(firstNumber, secondNumber);
+        Assert.Equal(expected, actual);
+
     }
 }

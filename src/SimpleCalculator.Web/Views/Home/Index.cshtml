@@ -17,7 +17,7 @@
 
     <p>
         <label asp-for="Result"></label>
-        <input asp-for="@ViewData["Result"]" readonly="true" /> <br />
+        <span asp-for="Result">@Model?.Result</span>
     </p>
 
     <button type="submit" class="btn btn-primary" asp-controller="Home" asp-action="Add">+</button>

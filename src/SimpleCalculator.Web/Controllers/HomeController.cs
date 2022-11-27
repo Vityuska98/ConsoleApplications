@@ -29,15 +29,13 @@ public class HomeController : Controller
     public IActionResult Add(CalculationInputModel model)
     {
         model.Result = _addition.Add(model.FirstNumber, model.SecondNumber);
-        ViewData["Result"] = model.Result;
-        return View("Index");
+        return View("Index", model);
     }
 
     [HttpPost]
     public IActionResult Subtract(CalculationInputModel model)
     {
         model.Result = _subtraction.Subtract(model.FirstNumber, model.SecondNumber);
-        ViewData["Result"] = model.Result;
         return View("Index", model);
     } 
 
@@ -45,8 +43,7 @@ public class HomeController : Controller
     public IActionResult Multiply(CalculationInputModel model)
     {
         model.Result = _multiplication.Multiply(model.FirstNumber, model.SecondNumber);
-        ViewData["Result"] = model.Result;
-        return View("Index");
+        return View("Index", model);
     }
 
     [HttpPost]
@@ -59,9 +56,8 @@ public class HomeController : Controller
         else
         {
             model.Result = _division.Divide(model.FirstNumber, model.SecondNumber);
-            ViewData["Result"] = model.Result;
         }
-        return View("Index");
+        return View("Index", model);
     }
 
     public IActionResult Privacy()

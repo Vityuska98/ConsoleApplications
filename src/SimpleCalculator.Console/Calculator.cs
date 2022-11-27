@@ -23,23 +23,25 @@ public class Calculator
                 IUserInputValidation input = serviceProvider.GetService<IUserInputValidation>();
                 
                 Console.WriteLine("Please enter the first number");
-                number.SecondNumber = input.ValidateInput();
+                number.FirstNumber = input.ValidateInput();
                 Console.WriteLine("Please enter the second number");
-                number.SecondNumber = input.ValidateInput();
                 switch (userOption)
                 {
                     case 1:
                         var addService = serviceProvider.GetService<IAddition>();
+                        number.SecondNumber = input.ValidateInput();
                         Console.WriteLine(addService?.Add(number.FirstNumber, number.SecondNumber));
                         break;
 
                     case 2:
                         var subService = serviceProvider.GetService<ISubtraction>();
+                        number.SecondNumber = input.ValidateInput();
                         Console.WriteLine(subService?.Subtract(number.FirstNumber, number.SecondNumber));
                         break;
 
                     case 3:
                         var multiplyService = serviceProvider.GetService<IMultiplication>();
+                        number.SecondNumber = input.ValidateInput();
                         Console.WriteLine(multiplyService?.Multiply(number.FirstNumber, number.SecondNumber));
                         break;
 
