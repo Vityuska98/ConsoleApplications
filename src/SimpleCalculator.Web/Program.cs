@@ -1,4 +1,6 @@
 using Calculations;
+using SimpleCalculator.DataAccessLibrary.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,7 @@ builder.Services.AddScoped<IAddition, Addition>();
 builder.Services.AddScoped<IDivision, Division>();
 builder.Services.AddScoped<ISubtraction, Subtraction>();
 builder.Services.AddScoped<IMultiplication, Multiplication>();
+builder.Services.AddDbContext<CalculatorDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CalculatorConnectionString")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
