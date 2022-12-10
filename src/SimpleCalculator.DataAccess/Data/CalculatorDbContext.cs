@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using SimpleCalculator.DataAccessLibrary.Model;
-namespace SimpleCalculator.DataAccessLibrary.Data;
+using SimpleCalculator.DataAccess.Model;
+namespace SimpleCalculator.DataAccess.Data;
 
 public class CalculatorDbContext : DbContext
 {
@@ -8,6 +8,6 @@ public class CalculatorDbContext : DbContext
     {
 
     }
-    public DbSet<CalculatorMemory> CalculatorMemories { get; set; }
+    public DbSet<CalculationResultEntity> CalculationResultEntities { get; set; }
 }
 

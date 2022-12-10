@@ -1,27 +1,19 @@
 ﻿using System.Diagnostics;
+using SimpleCalculator.Web.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using SimpleCalculator.Web.Models;
-using SimpleCalculator.DataAccessLibrary.Data;
-using SimpleCalculator.DataAccessLibrary.Model;
-using Calculations;
+using SimpleCalculator.DataAccess.Data;
 
 namespace SimpleCalculator.Web.Controllers;
 
 public class HomeController : Controller
 {
+    private readonly ICalculationService<CalculationInputModel> _service;
     private readonly CalculatorDbContext _context;
-    private readonly IAddition _addition;
-    private readonly ISubtraction _subtraction;
-    private readonly IMultiplication _multiplication;
-    private readonly IDivision _division;
 
-    public HomeController(IAddition addition, ISubtraction subtraction,
-        IMultiplication multiplication, IDivision division, CalculatorDbContext context)
+    public HomeController(ICalculationService<CalculationInputModel> service, CalculatorDbContext context)
     {
-        _addition = addition;
-        _subtraction = subtraction;
-        _multiplication = multiplication;
-        _division = division;
+        _service = service;
         _context = context;
     }
 
@@ -33,45 +25,21 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Add(CalculationInputModel model)
     {
-        model.Result = _addition.Add(model.FirstNumber, model.SecondNumber);
-        var calculatorMemory = new CalculatorMemory()
-        {
-            FirstNumber = model.FirstNumber,
-            SecondNumber = model.SecondNumber,
-            Result = model.Result,
-        };
-        _context.CalculatorMemories.Add(calculatorMemory);
-        _context.SaveChanges();
+        _service.Add(model);
         return View("Index", model);
     }
 
     [HttpPost]
     public IActionResult Subtract(CalculationInputModel model)
     {
-        model.Result = _subtraction.Subtract(model.FirstNumber, model.SecondNumber);
-        var calculatorMemory = new CalculatorMemory()
-        {
-            FirstNumber = model.FirstNumber,
-            SecondNumber = model.SecondNumber,
-            Result = model.Result,
-        };
-        _context.CalculatorMemories.Add(calculatorMemory);
-        _context.SaveChanges();
+        _service.Subtract(model);
         return View("Index", model);
     }
 
     [HttpPost]
     public IActionResult Multiply(CalculationInputModel model)
     {
-        model.Result = _multiplication.Multiply(model.FirstNumber, model.SecondNumber);
-        var calculatorMemory = new CalculatorMemory()
-        {
-            FirstNumber = model.FirstNumber,
-            SecondNumber = model.SecondNumber,
-            Result = model.Result,
-        };
-        _context.CalculatorMemories.Add(calculatorMemory);
-        _context.SaveChanges();
+        _service.Multiply(model);
         return View("Index", model);
     }
 
@@ -84,16 +52,8 @@ public class HomeController : Controller
         }
         else
         {
-            model.Result = _division.Divide(model.FirstNumber, model.SecondNumber);
+            _service.Divide(model);
         }
-        var calculatorMemory = new CalculatorMemory()
-        {
-            FirstNumber = model.FirstNumber,
-            SecondNumber = model.SecondNumber,
-            Result = model.Result,
-        };
-        _context.CalculatorMemories.Add(calculatorMemory);
-        _context.SaveChanges();
         return View("Index", model);
     }
 

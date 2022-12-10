@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.Web", "Sim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.Test", "SimpleCalculator.Test\SimpleCalculator.Test.csproj", "{AC780F48-7415-40B8-9202-A810FF362CCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.DataAccessLibrary", "SimpleCalculator.DataAccessLibrary\SimpleCalculator.DataAccessLibrary.csproj", "{2CFB7CD5-FED8-4DB9-88C8-0EA74EE98ABF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.DataAccess", "SimpleCalculator.DataAccess\SimpleCalculator.DataAccess.csproj", "{2CFB7CD5-FED8-4DB9-88C8-0EA74EE98ABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

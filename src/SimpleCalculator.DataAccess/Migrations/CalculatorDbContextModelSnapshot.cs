@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SimpleCalculator.DataAccessLibrary.Data;
+using SimpleCalculator.DataAccess.Data;
 
 #nullable disable
 
@@ -21,7 +21,7 @@ namespace SimpleCalculator.DataAccessLibrary.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SimpleCalculator.DataAccessLibrary.Model.CalculatorMemory", b =>
+            modelBuilder.Entity("SimpleCalculator.DataAccess.Model.CalculationResultEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,6 +32,9 @@ namespace SimpleCalculator.DataAccessLibrary.Migrations
                     b.Property<double>("FirstNumber")
                         .HasColumnType("float");
 
+                    b.Property<string>("MathOperator")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Result")
                         .HasColumnType("float");
 
@@ -40,7 +43,7 @@ namespace SimpleCalculator.DataAccessLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CalculatorMemories");
+                    b.ToTable("CalculationResultEntities");
                 });
 #pragma warning restore 612, 618
         }

@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SimpleCalculator.DataAccessLibrary.Data;
+using SimpleCalculator.DataAccess.Data;
 
 #nullable disable
 
 namespace SimpleCalculator.DataAccessLibrary.Migrations
 {
     [DbContext(typeof(CalculatorDbContext))]
-    [Migration("20221128225338_InitialDbCreation")]
-    partial class InitialDbCreation
+    [Migration("20221206231044_AddMathOperatorColumn")]
+    partial class AddMathOperatorColumn
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,9 @@ namespace SimpleCalculator.DataAccessLibrary.Migrations
 
                     b.Property<double>("FirstNumber")
                         .HasColumnType("float");
+
+                    b.Property<string>("MathOperator")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Result")
                         .HasColumnType("float");

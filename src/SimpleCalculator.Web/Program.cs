@@ -1,5 +1,8 @@
 using Calculations;
-using SimpleCalculator.DataAccessLibrary.Data;
+using SimpleCalculator.Web.Services;
+using SimpleCalculator.Web.Services.Interfaces;
+using SimpleCalculator.Web.Models;
+using SimpleCalculator.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IAddition, Addition>();
 builder.Services.AddScoped<IDivision, Division>();
-builder.Services.AddScoped<ISubtraction, Subtraction>();
 builder.Services.AddScoped<IMultiplication, Multiplication>();
+builder.Services.AddScoped<ISubtraction, Subtraction>();
+builder.Services.AddScoped<ICalculationService<CalculationInputModel>, CalculationService>();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddDbContext<CalculatorDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CalculatorConnectionString")));
 var app = builder.Build();
 
