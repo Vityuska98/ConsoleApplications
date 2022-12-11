@@ -31,7 +31,6 @@ public class CalculationService : ICalculationService<CalculationInputModel>
         var entities = _mapper.Map<CalculationResultEntity>(model);
         entities.MathOperator = "+";
         _context.CalculationResultEntities.Add(entities);
-        _context.SaveChanges();
     }
 
     public void Divide(CalculationInputModel model)
@@ -40,7 +39,6 @@ public class CalculationService : ICalculationService<CalculationInputModel>
         var entities = _mapper.Map<CalculationResultEntity>(model);
         entities.MathOperator = "/";
         _context.CalculationResultEntities.Add(entities);
-        _context.SaveChanges();
     }
 
     public void Multiply(CalculationInputModel model)
@@ -49,7 +47,6 @@ public class CalculationService : ICalculationService<CalculationInputModel>
         var entities = _mapper.Map<CalculationResultEntity>(model);
         entities.MathOperator = "*";
         _context.CalculationResultEntities.Add(entities);
-        _context.SaveChanges();
     }
 
     public void Subtract(CalculationInputModel model)
@@ -58,7 +55,10 @@ public class CalculationService : ICalculationService<CalculationInputModel>
         var entities = _mapper.Map<CalculationResultEntity>(model);
         entities.MathOperator = "-";
         _context.CalculationResultEntities.Add(entities);
-        _context.SaveChanges();
     }
     
+    public void Save()
+    {
+        _context.SaveChanges();
+    }
 }

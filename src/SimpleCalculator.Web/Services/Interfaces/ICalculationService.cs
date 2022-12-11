@@ -6,4 +6,5 @@ public interface ICalculationService<T>
     void Add(T model);
     void Subtract(T model);
     void Divide(T model);
+    void Save();
 }

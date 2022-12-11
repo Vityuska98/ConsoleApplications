@@ -26,6 +26,7 @@ public class HomeController : Controller
     public IActionResult Add(CalculationInputModel model)
     {
         _service.Add(model);
+        _service.Save();
         return View("Index", model);
     }
 
@@ -33,6 +34,7 @@ public class HomeController : Controller
     public IActionResult Subtract(CalculationInputModel model)
     {
         _service.Subtract(model);
+        _service.Save();
         return View("Index", model);
     }
 
@@ -40,6 +42,7 @@ public class HomeController : Controller
     public IActionResult Multiply(CalculationInputModel model)
     {
         _service.Multiply(model);
+        _service.Save();
         return View("Index", model);
     }
 
@@ -53,6 +56,7 @@ public class HomeController : Controller
         else
         {
             _service.Divide(model);
+            _service.Save();
         }
         return View("Index", model);
     }
